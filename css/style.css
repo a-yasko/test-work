@@ -1,0 +1,128 @@
+body {
+  position: relative;
+  z-index: 0;
+  min-height: 100vh;
+}
+
+.app {
+  padding-top: 50px;
+}
+
+/* Table */
+
+thead tr {
+  border-color: #333;
+  border-bottom-width: 1px;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+thead th {
+  color: #58595B;
+  border: none;
+}
+
+thead th:hover {
+  color: #00CF91;
+  cursor: pointer;
+}
+
+.active {
+  color: #00CF91;
+}
+
+tbody tr {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+tbody tr:hover {
+  opacity: 1;
+}
+
+/* Add payment */
+
+.add-payment-wrap a {
+  color: #333;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: -12px;
+}
+
+.add-payment-wrap a:hover {
+  color: #00CF91;
+}
+
+.invalid {
+  border: 1px solid #ff000060;
+}
+
+form p {
+  color: #ff000060;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  transition: 0.3s;
+}
+
+/* Info payment */
+
+.mdl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.459);
+  z-index: 3 !important;
+}
+
+.mdl-body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  min-height: 100vh;
+  background-color: #fff;
+  padding: 50px;
+  z-index: 4 !important;
+}
+
+.mdl-body .close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.mdl-body .delete-payment {
+  color: #333;
+  text-decoration: none;
+}
+
+.mdl-body .close:hover,
+.mdl-body .delete-payment:hover {
+  color: #00CF91;
+}
+
+.mdl-body p {
+  margin: 7px auto;
+  padding: 0;
+}
+
+.row {
+  border-bottom: 1px solid #ccc;
+}
+
+.show-info {
+  display: block;
+}
+
+.hide-info {
+  display: none;
+}

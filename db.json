@@ -1,0 +1,40 @@
+{
+  "theads": [
+    {
+      "orderid": "Номер заказа",
+      "date": "Дата",
+      "amount": "Сумма",
+      "cardmask": "Номер карты"
+    }
+  ],
+  "payments": [
+    {
+      "id": "1",
+      "orderid": "60bf1c43f98801034c8cae3c",
+      "date": "2021-06-08 10:29",
+      "amount": 1569.01,
+      "cardmask": "427649xxxxxx6606"
+    },
+    {
+      "id": "2",
+      "orderid": "60c1f6f303c3789ab79e99aa",
+      "date": "2021-06-10 14:26",
+      "amount": 80,
+      "cardmask": "427655xxxxxx6605"
+    },
+    {
+      "id": "3",
+      "orderid": "60c0c321dbdc3112259cdf70",
+      "date": "2021-06-09 16:33",
+      "amount": 1155160,
+      "cardmask": "427639xxxxxx7210"
+    },
+    {
+      "orderid": "RU271234-034234-sdf",
+      "date": "2021-04-23 04:34",
+      "amount": 24233.43,
+      "cardmask": "342334xxxxxx4234",
+      "id": "po3tASC"
+    }
+  ]
+}
