@@ -3,7 +3,7 @@ import getData from './get-data';
 import render from '../modules/table/render-rows';
 import sort from '../modules/sort/sort';
 
-async function deletePayment(id) {
+async function deletePayment(id, getUrl) {
   const mdl = document.querySelector('.mdl');
 
   await axios.delete(`http://localhost:3000/payments/${id}`)
@@ -14,7 +14,7 @@ async function deletePayment(id) {
   })
   .catch(error => alert(error));
 
-  const req = await getData('http://localhost:3000/payments');
+  const req = await getData(getUrl);
   render(req);
   sort(req);
 }

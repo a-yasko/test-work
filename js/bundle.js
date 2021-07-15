@@ -5137,7 +5137,7 @@ function createModalInfo() {
     const answer = confirm('Really?');
 
     if (answer) {
-      (0,_services_delete_payment__WEBPACK_IMPORTED_MODULE_0__.default)(document.querySelector('.mdl').getAttribute('data-id'));
+      (0,_services_delete_payment__WEBPACK_IMPORTED_MODULE_0__.default)(document.querySelector('.mdl').getAttribute('data-id'), 'http://localhost:3000/payments');
     }
   });
 }
@@ -5160,14 +5160,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-async function deletePayment(id) {
+async function deletePayment(id, getUrl) {
   const mdl = document.querySelector('.mdl');
   await axios__WEBPACK_IMPORTED_MODULE_0___default().delete(`http://localhost:3000/payments/${id}`).then(response => {
     console.log(response);
     mdl.classList.add('hide-info');
     mdl.classList.remove('show-info');
   }).catch(error => alert(error));
-  const req = await (0,_get_data__WEBPACK_IMPORTED_MODULE_1__.default)('http://localhost:3000/payments');
+  const req = await (0,_get_data__WEBPACK_IMPORTED_MODULE_1__.default)(getUrl);
   (0,_modules_table_render_rows__WEBPACK_IMPORTED_MODULE_2__.default)(req);
   (0,_modules_sort_sort__WEBPACK_IMPORTED_MODULE_3__.default)(req);
 }

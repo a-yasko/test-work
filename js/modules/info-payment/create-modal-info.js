@@ -41,7 +41,7 @@ function createModalInfo() {
 
     const answer = confirm('Really?');
     if (answer) {
-      deletePayment(document.querySelector('.mdl').getAttribute('data-id'));
+      deletePayment(document.querySelector('.mdl').getAttribute('data-id'), 'http://localhost:3000/payments');
     }
   });
 }
