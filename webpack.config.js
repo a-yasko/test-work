@@ -3,7 +3,7 @@
 let path = require('path');
 
 module.exports = {
-  mode: 'none',
+  mode: 'production',
   entry: './js/index.js',
   output: {
     filename: 'bundle.js',
