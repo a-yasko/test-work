@@ -4,4 +4,4 @@
 
 После установки пакетов:
 - сборка: npx webpack ;
-- запуск тестового бэкэнда: json-server db.json .
+- запуск фейкового REST API: json-server db.json .
