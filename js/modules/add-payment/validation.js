@@ -112,7 +112,7 @@ function validation() {
         date: `${yyyy}-${plusZero(mm)}-${plusZero(dd)} ${plusZero(hours)}:${plusZero(minutes)}`,
         amount: Number(amount.value.trim()),
         cardmask: cardmask.value.trim()
-      });
+      }, 'http://localhost:3000/payments');
     }
   });
 }

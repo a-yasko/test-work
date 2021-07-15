@@ -3,11 +3,11 @@ import getData from './get-data';
 import render from '../modules/table/render-rows'
 import sort from '../modules/sort/sort';
 
-async function postData(data) {
+async function postData(data, url) {
   const modal = document.querySelector('.modal'),
         form = document.querySelector('.modal form');
 
-  await axios.post('http://localhost:3000/payments', {
+  await axios.post(url, {
     orderid: data.orderid,
     date: data.date,
     amount: data.amount,
@@ -28,7 +28,7 @@ async function postData(data) {
   })
   .catch(error => alert(error))
 
-  const req = await getData('http://localhost:3000/payments');
+  const req = await getData(url);
   render(req);
   sort(req);
 }

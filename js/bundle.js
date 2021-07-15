@@ -2186,7 +2186,7 @@ function validation() {
         date: `${yyyy}-${(0,_table_zero__WEBPACK_IMPORTED_MODULE_2__.default)(mm)}-${(0,_table_zero__WEBPACK_IMPORTED_MODULE_2__.default)(dd)} ${(0,_table_zero__WEBPACK_IMPORTED_MODULE_2__.default)(hours)}:${(0,_table_zero__WEBPACK_IMPORTED_MODULE_2__.default)(minutes)}`,
         amount: Number(amount.value.trim()),
         cardmask: cardmask.value.trim()
-      });
+      }, 'http://localhost:3000/payments');
     }
   });
 }
@@ -2209,10 +2209,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-async function postData(data) {
+async function postData(data, url) {
   const modal = document.querySelector('.modal'),
         form = document.querySelector('.modal form');
-  await axios__WEBPACK_IMPORTED_MODULE_0___default().post('http://localhost:3000/payments', {
+  await axios__WEBPACK_IMPORTED_MODULE_0___default().post(url, {
     orderid: data.orderid,
     date: data.date,
     amount: data.amount,
@@ -2230,7 +2230,7 @@ async function postData(data) {
     document.body.style.cssText = ``;
     form.reset();
   }).catch(error => alert(error));
-  const req = await (0,_get_data__WEBPACK_IMPORTED_MODULE_1__.default)('http://localhost:3000/payments');
+  const req = await (0,_get_data__WEBPACK_IMPORTED_MODULE_1__.default)(url);
   (0,_modules_table_render_rows__WEBPACK_IMPORTED_MODULE_2__.default)(req);
   (0,_modules_sort_sort__WEBPACK_IMPORTED_MODULE_3__.default)(req);
 }
