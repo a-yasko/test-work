@@ -1,4 +1,4 @@
-import plusZero from './zero';
+import checkZeroDate from './check-zero-date';
 import renderModalInfo from '../info-payment/render-modal-info';
 import checkAmount from './check-amount';
 
@@ -17,7 +17,7 @@ function render(data) {
     trForTbody.innerHTML = `
       <tr>
         <td>${item.orderid}</td>
-        <td>${yyyy}-${plusZero(mm)}-${plusZero(dd)} ${plusZero(hours)}:${plusZero(minutes)}</td>
+        <td>${yyyy}-${checkZeroDate(mm)}-${checkZeroDate(dd)} ${checkZeroDate(hours)}:${checkZeroDate(minutes)}</td>
         <td>${checkAmount(item.amount)}</td>
         <td>${item.cardmask}</td>
       </tr>

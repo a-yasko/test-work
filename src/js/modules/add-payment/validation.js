@@ -1,6 +1,6 @@
 import postData from "../../services/post-data";
 import Inputmask from "inputmask";
-import plusZero from "../table/zero";
+import checkZeroDate from "../table/check-zero-date";
 
 function validation() {
   const inputs = document.querySelectorAll('.modal form input'),
@@ -109,7 +109,7 @@ function validation() {
     if (inputs[0].value.trim() && inputs[1].value.trim() && inputs[2].value.trim() && inputs[3].value.trim() && objIsValid.isValidAmount && objIsValid.isValidCardmask) {
       postData({
         orderid: orderid.value.trim(),
-        date: `${yyyy}-${plusZero(mm)}-${plusZero(dd)} ${plusZero(hours)}:${plusZero(minutes)}`,
+        date: `${yyyy}-${checkZeroDate(mm)}-${checkZeroDate(dd)} ${checkZeroDate(hours)}:${checkZeroDate(minutes)}`,
         amount: Number(amount.value.trim()),
         cardmask: cardmask.value.trim()
       }, 'http://localhost:3000/payments');

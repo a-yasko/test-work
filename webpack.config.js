@@ -1,20 +1,22 @@
-'use strict';
-
-let path = require('path');
+const path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
+  context: path.resolve(__dirname, 'src'),
+  mode: 'development',
   entry: './js/index.js',
   output: {
-    filename: 'bundle.js',
-    path: __dirname + '/js'
+    filename: '[contenthash].bundle.js',
+    path: path.resolve(__dirname, 'dist')
   },
-  watch: true,
-
   devtool: "source-map",
-
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
@@ -30,5 +32,11 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: './index.html'
+    }),
+    new CleanWebpackPlugin()
+  ]
 };

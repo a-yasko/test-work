@@ -1,7 +1,7 @@
-import plusZero from "../table/zero";
+import checkZeroDate from "../table/check-zero-date";
 
 function createModalAddPayment() {
-  const now = `${new Date().getUTCFullYear()}-${plusZero(new Date().getMonth() + 1)}-${plusZero(new Date().getDate())}T${plusZero(new Date().getHours())}:${plusZero(new Date().getMinutes())}`;
+  const now = `${new Date().getUTCFullYear()}-${checkZeroDate(new Date().getMonth() + 1)}-${checkZeroDate(new Date().getDate())}T${checkZeroDate(new Date().getHours())}:${checkZeroDate(new Date().getMinutes())}`;
   const app = document.querySelector('.app');
   const container = document.querySelector('.container');
   const modal = document.createElement('div');
@@ -28,7 +28,7 @@ function createModalAddPayment() {
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Добавить платеж</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <a type="button" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></a>
         </div>
         <div class="modal-body">
           <form>
